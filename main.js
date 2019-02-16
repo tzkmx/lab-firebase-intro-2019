@@ -152,10 +152,10 @@ function drawResults(array){
   // OPTIONAL
   //resultsContainer.innerHTML = ""
   //
-    array.forEach(function(el, index){
+    array.forEach(function({ link, title, tags}, index){
         let figure = document.createElement('figure')
         figure.innerHTML = `
-            <img src="${el.link}" alt="${index}"><span>${el.title}</span><span>${el.tag}</span>
+            <img src="${link}" alt="${index}"><span>${title}</span><span>${tags}</span>
         `
         resultsContainer.prepend(figure)
     })
