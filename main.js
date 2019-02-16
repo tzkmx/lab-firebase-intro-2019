@@ -13,16 +13,17 @@ let user
 
 // FIREBASE INITIALIZE AND REFS
 
-// let firestore = firebase.firestore()
-// let memesRef = firestore.collection('memes')
+let firestore = firebase.firestore()
+let memesRef = firestore.collection('memetla')
 
 
 //FIREBASE AUX FUNCTIONS
 
-// function writeMeme(object){
-//     let id = memesRef.doc().id
-//     memesRef.doc(id).set(object)
-// }
+function writeMeme(object){
+    let id = memesRef.doc().id
+    object.id = id
+    memesRef.doc(id).set(object)
+}
 
 // consultas
 
@@ -114,8 +115,7 @@ subirButton.addEventListener('click', function(){
     subirButton.style = "background:grey"
     //console.log(meme)
     //UPLOAD TO FIREBASE
-    //writeMeme(meme)
-    //
+    writeMeme(meme)
 
     //after upload
     clearModal()
