@@ -27,22 +27,21 @@ function writeMeme(object){
 
 // consultas
 
-// function searchFor(string){
-//     console.log("buscando", string)
-//     memesRef.where('tags', "==", string)
-//     .get()
-//     .then(function(snap){
-//         if(snap.empty) alert("Sin resultados") 
-//         snap.forEach(doc=>{
-//             resultsContainer.innerHTML = ""
-//             let figure = document.createElement('figure')
-//             figure.innerHTML = `
-//                 <img src="${doc.data().link}" alt="${doc.data().title}" />
-//             `
-//             resultsContainer.appendChild(figure)
-//         })
-//     })
-// }
+function searchFor(string){
+     memesRef.where('tags', "==", string)
+     .get()
+     .then(function(snap){
+         if(snap.empty) alert("Sin resultados") 
+         snap.forEach(doc=>{
+             resultsContainer.innerHTML = ""
+             let figure = document.createElement('figure')
+             figure.innerHTML = `
+                 <img src="${doc.data().link}" alt="${doc.data().title}" />
+             `
+             resultsContainer.appendChild(figure)
+         })
+     })
+}
 
 
 //FIREBASE LOGIN
@@ -84,11 +83,11 @@ memesRef.onSnapshot(function(snap){
 
 //defaults listeners
 
-// searching.addEventListener('keydown', function(e){
-//     if(e.key == "Enter"){
-//         searchFor(e.target.value)
-//     }
-// })
+searching.addEventListener('keydown', function(e){
+    if(e.key == "Enter"){
+        searchFor(e.target.value)
+    }
+})
 
 username.addEventListener('click', function(){
     if(!user){
@@ -126,7 +125,7 @@ subirButton.addEventListener('click', function(){
 document.querySelector('.upload')
 .addEventListener('click', function(){
     //FIREBASE
-    //if(!user) return alert("Inicia Sesión")
+    if(!user) return alert("Inicia Sesión")
     
     fileInput.click()
 })
