@@ -47,16 +47,15 @@ function writeMeme(object){
 
 //FIREBASE LOGIN
 
-// function gmailLogin(){
-//     var provider = new firebase.auth.GoogleAuthProvider()
-//     firebase.auth()
-//         .signInWithPopup(provider)
-//         .then(function(result) {
-//             user = result.user
-//             setUser()
-//     })
-
-// }
+function gmailLogin(){
+    var provider = new firebase.auth.GoogleAuthProvider()
+    firebase.auth()
+        .signInWithPopup(provider)
+        .then(function(result) {
+            user = result.user
+            setUser()
+    })
+}
 
 
 
@@ -91,13 +90,13 @@ memesRef.onSnapshot(function(snap){
 //     }
 // })
 
-// username.addEventListener('click', function(){
-//     if(!user){
-//         gmailLogin()
-//     }else{
-//         logout()
-//     }
-// })
+username.addEventListener('click', function(){
+    if(!user){
+        gmailLogin()
+    }else{
+        logout()
+    }
+})
 
 tache.addEventListener('click', function(){
     clearModal()
