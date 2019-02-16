@@ -74,12 +74,11 @@ function writeMeme(object){
 
 //MEMES LISTENER
 
-// memesRef.onSnapshot(function(snap){
-//     snap.forEach(function(doc){
-//         drawResults([doc.data()])
-//     })
-// })
-//
+memesRef.onSnapshot(function(snap){
+    snap.forEach(function(doc){
+        drawResults([doc.data()])
+    })
+})
 
 // SEARCH FOR MEMES
 //
