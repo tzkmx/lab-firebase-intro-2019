@@ -63,13 +63,13 @@ function gmailLogin(){
 
 //USER LISTENER
 
-// firebase.auth().onAuthStateChanged(function(u){
-//     if(!u) console.log("Recuerda loguearte para publicar")
-//    else {
-//         user = u
-//         setUser()
-//     }
-// })
+firebase.auth().onAuthStateChanged(function(u){
+    if(!u) console.log("Recuerda loguearte para publicar")
+    else {
+        user = u
+        setUser()
+    }
+})
 
 //MEMES LISTENER
 
@@ -188,5 +188,5 @@ function setUser(){
 function logout(){
     user = undefined
     setUser()
-    //firebase.auth().signOut()
+    firebase.auth().signOut()
 }
