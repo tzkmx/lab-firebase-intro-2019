@@ -1,5 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './styles.css'
+import App from './components/App'
+
+ReactDOM.render(<App/>, document.getElementById('root'))
+
 //nodes
 let photoURL = document.getElementById('photoURL')
 let username = document.getElementById('username')
@@ -191,6 +196,3 @@ function logout(){
     setUser()
     firebase.auth().signOut()
 }
-
-
-ReactDOM.render(<App/>, document.getElementById('root'))
