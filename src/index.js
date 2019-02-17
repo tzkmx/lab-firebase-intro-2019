@@ -1,3 +1,5 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 //nodes
 let photoURL = document.getElementById('photoURL')
 let username = document.getElementById('username')
@@ -189,3 +191,6 @@ function logout(){
     setUser()
     firebase.auth().signOut()
 }
+
+
+ReactDOM.render(<App/>, document.getElementById('root'))
